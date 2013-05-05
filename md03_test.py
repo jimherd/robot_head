@@ -7,7 +7,7 @@ import time
 # MD03_test : exercise MD03 class
 #
 
-md03 =  MD03(0x51, debug=True)
+md03 =  MD03(0x58, debug=True)
 
 print "MD03 test started"
 
