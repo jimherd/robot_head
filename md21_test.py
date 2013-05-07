@@ -9,11 +9,11 @@ import time
 
 md21 =  MD21(0x61, debug=True)
 
-print "MD21 test started"
+print 'MD21 test started'
 
 md21.set_servo(1, 10, 0)
 time.sleep(3)
 md21.set_servo(1, 80, 0)
 time.sleep(3)
 md21.set_servo(0, 45, 0)
-print "Voltage reading = %d" % md21.read_volts()
+print 'Voltage reading = {0}'.format(md21.read_volts())

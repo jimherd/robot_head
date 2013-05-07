@@ -23,13 +23,13 @@ class SRF08 :
   def read_reg(self, reg): 
     if ((reg < 0 ) | (reg > 35)):
       if (self.debug):
-	print "Register %d outwith range 0 to 35" % reg
+	print 'Register {0} outwith range 0 to 35'.format(reg)
 	return -1 
     return self.i2c.readU8(reg)
 
-  def write_reg(self, reg, val)
-    if ((reg < 0) | (reg > 2):
-      print "Register %d outwith range 0 to 2" % reg
+  def write_reg(self, reg, val):
+    if ((reg < 0) | (reg > 2)):
+      print 'Register {0} outwith range 0 to 2'.format(reg)
       return -1
     self.i2c.write8(reg, val)
     return 0
@@ -37,6 +37,6 @@ class SRF08 :
   def read_echo(self, echo):
     if ((echo < 1) | (echo > 17)):
       if (self.debug):
-        print "Echo request %d outwith range 1 to 17" % echo
-    return self.i2c.readU16(((echo - 1) * 2) + 2))
+        print 'Echo request {0} outwith range 1 to 17'.format(echo)
+    return self.i2c.readU16(((echo - 1) * 2) + 2)
 

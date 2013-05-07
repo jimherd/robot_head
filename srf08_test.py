@@ -17,5 +17,6 @@ for x in range(0, 9):
   srf08.write_reg(0, 0x51)
   time.sleep(1)
   dist = srf08.read_echo(1)
-  print "Distance = %d" % dist
+  lval = srf08.read_reg(1)
+  print 'Distance = {0} :: light vale = {1}'.format(dist, lval)
 

@@ -23,7 +23,7 @@ class MD03 :
   def set_speed(self, speed): 
     if ((speed < 0 ) | (speed > 100)):
       if (self.debug):
-	print "Speed %d outwith range 0 to 100%" % speed
+	print 'Speed {0} outwith range 0 to 100%'.format(speed)
 	return -1 
     spd = ((speed * 255)/100)
     self.i2c.write8(2, spd)
@@ -32,7 +32,7 @@ class MD03 :
   def set_accel(self, accel):
     if ((accel < 0) | (accel > 100)):
       if (self.debug):
-        print "Acceleration %d outwith range 0 to 100%" % accel
+        print 'Acceleration {0} outwith range 0 to 100%'.format(accel)
     acc = 255 - ((accel * 255)/100)
     self.i2c.write8(3, acc)
     return 0

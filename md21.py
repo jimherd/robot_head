@@ -24,15 +24,15 @@ class MD21 :
   def set_servo(self, servo_no, angle, speed): 
     if ((servo_no < 1 ) | (servo_no > 21)):
       if (self.debug):
-        print "Servo number %d outwith range 1 to 21" % servo_no
+        print 'Servo number {0} outwith range 1 to 21'.format(servo_no)
         return -1
     if ((angle < 0) | (angle > 90)):
       if (self.debug):
-        print "Angle %d outwith range 0 to 90 degrees" % angle
+        print 'Angle {0} outwith range 0 to 90 degrees'.format(angle)
 	return -1
     if ((speed < 0 ) | (speed > 255)):
       if (self.debug):
-	print "Speed %d outwith range 0 to 255" % speed
+	print 'Speed {0} outwith range 0 to 255'.format(speed)
 	return -1
     self.servo_pos[servo_no - 1] = angle 
     pulse_width = 1000 + ((angle *1000)/90)
