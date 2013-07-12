@@ -35,7 +35,7 @@ class LCD03 :
     return 0
 
   def backlight_off(self):
-    self.i2c.write(CMD_REG, 20)
+    self.i2c.write8(CMD_REG, 20)
     return 0
 
   def write_chr(self, char):

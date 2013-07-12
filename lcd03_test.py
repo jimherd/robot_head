@@ -13,7 +13,7 @@ print "LCD03 test started"
 
 lcd03.clear()
 lcd03.backlight_on()
-lcd03.write_chr('J')
-lcd03.write_str("im Herd")
-sleep(5)
+value = 42
+lcd03.write_str( 'r = {0}'.format(value) )
+time.sleep(5)
 lcd03.backlight_off()
