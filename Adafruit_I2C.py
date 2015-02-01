@@ -102,6 +102,17 @@ class Adafruit_I2C :
     except IOError, err:
       return self.errMsg()
 
+  def readU8_noreg(self, reg):
+    "Read an unsigned byte from the I2C device"
+    try:
+      result = self.bus.read_byte(self.address)
+      if self.debug:
+        print ("I2C: Device 0x%02X returned 0x%02X from reg 0x%02X" %
+         (self.address, result & 0xFF, reg))
+      return result
+    except IOError, err:
+      return self.errMsg()
+
   def readS8(self, reg):
     "Reads a signed byte from the I2C device"
     try:
