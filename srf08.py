@@ -40,3 +40,10 @@ class SRF08 :
         print 'Echo request {0} outwith range 1 to 17'.format(echo)
     return self.i2c.readU16(((echo - 1) * 2) + 2)
 
+  def change_address(self, old_add, new_add):
+    self.i2c.write8(0, 0xa0)
+    self.i2c.write8(0, 0xaa)
+    self.i2c.write8(0, 0xa5)
+    self.i2c.write8(0, (new_add << 1))
+    return 0
+
