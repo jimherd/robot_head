@@ -28,7 +28,7 @@ class EEPROM_24C32():
 
   def read_AT24C32_byte(self, address):
     self.set_current_AT24C32_address(address)
-    return self.i2c.readU8_noreg(address)
+    return self.i2c.readU8_noreg()
 #    return smbus.bus.read_byte(self.address)
 
   def write_AT24C32_byte(self, address, value):
